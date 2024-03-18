@@ -1,0 +1,15 @@
+{
+  "originHash" : "89ccc8483b5adcede5a486931584c2e4c894e38bd73aae54ea8ceb058a62ac2e",
+  "pins" : [
+    {
+      "identity" : "swiftuiviewrepresentable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vivalalova/SwiftUIViewRepresentable.git",
+      "state" : {
+        "revision" : "2b418c761115888acf86c57c73c06cf20b48f297",
+        "version" : "0.1.1"
+      }
+    }
+  ],
+  "version" : 3
+}
