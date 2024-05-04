@@ -10,13 +10,13 @@ let package = Package(
         .library(name: "Features", targets: ["Features"])
     ],
     dependencies: [
-        .package(url: "https://github.com/vivalalova/SwiftUIViewRepresentable.git", from: "0.1.0")
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "1.10.0")
     ],
     targets: [
         .target(
             name: "Features",
             dependencies: [
-                .product(name: "SwiftUIViewRepresentable", package: "SwiftUIViewRepresentable")
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ]
         ),
         .testTarget(name: "FeaturesTests", dependencies: ["Features"])

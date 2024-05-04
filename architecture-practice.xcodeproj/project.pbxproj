@@ -20,6 +20,7 @@
 		9E160E062BA84383005DCCE4 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		9E160E0A2BA8458A005DCCE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9E160E0D2BA845B6005DCCE4 /* APP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
+		9EC489CE2BE6AEF200B7D0FA /* architecture-practice.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "architecture-practice.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +55,11 @@
 		9E160DF72BA84286005DCCE4 /* architecture-practice */ = {
 			isa = PBXGroup;
 			children = (
-				9E160E0A2BA8458A005DCCE4 /* Info.plist */,
 				9E160E062BA84383005DCCE4 /* Features */,
-				9E160DFC2BA84287005DCCE4 /* Assets.xcassets */,
 				9E160E0D2BA845B6005DCCE4 /* APP.swift */,
+				9E160DFC2BA84287005DCCE4 /* Assets.xcassets */,
+				9EC489CE2BE6AEF200B7D0FA /* architecture-practice.xctestplan */,
+				9E160E0A2BA8458A005DCCE4 /* Info.plist */,
 				9E160DFE2BA84287005DCCE4 /* Preview Content */,
 			);
 			path = "architecture-practice";
