@@ -23,6 +23,8 @@ struct AppFeature {
         case numberFactResponse(String)
     }
 
+    @Dependency(\.numberFact) var numberFactClient
+
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
@@ -37,12 +39,10 @@ struct AppFeature {
             case .numberFactButtonTapped:
                 return .run { [count = state.count] send in
 
-                    let url = URL(string: "http://numbersapi.com/\(count)/trivia")!
-
-                    let (data, _) = try await URLSession.shared.data(from: url)
+                    let string = try await self.numberFactClient.fetch(count)
 
                     await send(
-                        .numberFactResponse(String(decoding: data, as: UTF8.self))
+                        .numberFactResponse(string)
                     )
                 }
 

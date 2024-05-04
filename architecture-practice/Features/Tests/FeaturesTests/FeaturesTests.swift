@@ -10,9 +10,6 @@ final class FeaturesTests: XCTestCase, Sendable {
             reducer: {
                 AppFeature()
             }
-//            withDependencies: {
-//                $0.numberFact = "\($0) is a good number Brent"
-//            }
         )
 
         await store.send(.incrementButtonTapped) {
@@ -27,7 +24,7 @@ final class FeaturesTests: XCTestCase, Sendable {
         await store.send(.numberFactButtonTapped)
 
         await store.receive(\.numberFactResponse) {
-            $0.numberFact = "0 is the atomic number of the theoretical element tetraneutron."
+            $0.numberFact = "hihihihihi"
         }
     }
 }
