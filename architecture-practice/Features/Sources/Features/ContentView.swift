@@ -31,21 +31,16 @@ struct AppFeature {
             case .decrementButtonTapped:
                 state.count -= 1
                 return .none
-
             case .incrementButtonTapped:
                 state.count += 1
                 return .none
-
             case .numberFactButtonTapped:
                 return .run { [count = state.count] send in
 
                     let string = try await self.numberFactClient.fetch(count)
 
-                    await send(
-                        .numberFactResponse(string)
-                    )
+                    await send(.numberFactResponse(string))
                 }
-
             case let .numberFactResponse(fact):
                 state.numberFact = fact
                 return .none
