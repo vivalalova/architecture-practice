@@ -21,10 +21,14 @@ final class FeaturesTests: XCTestCase {
         }
 
         ///
-        await store.send(.numberFactButtonTapped)
+        await store.send(.numberFactButtonTapped) {
+            $0.numberFact = "loading..."
+            $0.numberDate = "loading..."
+        }
 
         await store.receive(\.numberFactResponse) {
             $0.numberFact = "hihihihihi"
+            $0.numberDate = "dateeee"
         }
     }
 }

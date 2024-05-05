@@ -14,13 +14,14 @@ struct AppFeature {
     struct State: Equatable {
         var count = 0
         var numberFact: String?
+        var numberDate: String?
     }
 
     enum Action {
         case decrementButtonTapped
         case incrementButtonTapped
         case numberFactButtonTapped
-        case numberFactResponse(String)
+        case numberFactResponse(String, String)
     }
 
     @Dependency(\.numberFact) var numberFactClient
@@ -35,14 +36,18 @@ struct AppFeature {
                 state.count += 1
                 return .none
             case .numberFactButtonTapped:
+                state.numberFact = "loading..."
+                state.numberDate = "loading..."
+
                 return .run { [count = state.count] send in
+                    let string = try await self.numberFactClient.trivia(count)
+                    let string2 = try await self.numberFactClient.date(count)
 
-                    let string = try await self.numberFactClient.fetch(count)
-
-                    await send(.numberFactResponse(string))
+                    await send(.numberFactResponse(string, string2))
                 }
-            case let .numberFactResponse(fact):
+            case let .numberFactResponse(fact, fact2):
                 state.numberFact = fact
+                state.numberDate = fact2
                 return .none
             }
         }
@@ -66,6 +71,10 @@ struct ContentView: View {
 
             if let fact = store.numberFact {
                 Text(fact)
+            }
+
+            if let fact2 = store.numberDate {
+                Text(fact2)
             }
         }
     }

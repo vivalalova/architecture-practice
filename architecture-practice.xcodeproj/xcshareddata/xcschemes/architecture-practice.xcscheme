@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1530"
-   version = "1.7">
+   version = "1.8">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -32,6 +32,9 @@
          <TestPlanReference
             reference = "container:architecture-practice.xctestplan"
             default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:architecture-practice/TestPlan.xctestplan">
          </TestPlanReference>
       </TestPlans>
    </TestAction>
